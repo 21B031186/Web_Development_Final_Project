@@ -4,7 +4,6 @@ from django.contrib.auth import authenticate
 
 
 class LoginSerializer(serializers.Serializer):
-
     username = serializers.CharField(max_length=255, write_only=True)
     password = serializers.CharField(max_length=128, write_only=True)
 
@@ -12,7 +11,6 @@ class LoginSerializer(serializers.Serializer):
     token = serializers.CharField(max_length=255, read_only=True)
 
     def validate(self, data):
-
         username = data.get('username', None)
         password = data.get('password', None)
 
@@ -39,4 +37,10 @@ class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Events
         fields = '__all__'
-        # read_only_fields = ('desc', 'info', 'photo', 'category', 'company')
+        # read_only_fields = ('desc', 'info', 'photo', 'category')
+
+
+class CreateUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'password')

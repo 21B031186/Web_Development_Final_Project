@@ -5,7 +5,6 @@ export interface Events{
   info: string;
   photo: string;
   like: number;
-  company: string;
   date: string;
   category_id: number;
   user: string;
@@ -23,4 +22,9 @@ export interface Token {
 export interface LoginData {
   username: string,
   password: string
+}
+export interface LikedData{
+  username: string;
+  event: string;
+  user_liked: boolean;
 }

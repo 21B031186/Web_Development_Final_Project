@@ -1,29 +1,27 @@
 <p>create-event works!</p>
 <div>
-  <label>title: </label>
-  <input class="form-control" [(ngModel)]="title" placeholder="name">
+  <label>Title: </label>
+  <input class="form-control" [(ngModel)]="title" placeholder="Name">
 </div>
 <div>
-  <label>desc: </label>
-  <input class="form-control" [(ngModel)]="desc" placeholder="desc">
+  <label>Description: </label>
+  <input class="form-control" [(ngModel)]="desc" placeholder="Description">
 </div>
 
 <div>
-  <label>info: </label>
-  <input class="form-control" [(ngModel)]="info" placeholder="info">
+  <label>Information: </label>
+  <input class="form-control" [(ngModel)]="info" placeholder="Information">
 </div>
 <div>
-  <label>photo url: </label>
-  <input class="form-control" [(ngModel)]="photo" placeholder="photo">
+  <label>URL photo: </label>
+  <input class="form-control" [(ngModel)]="photo" placeholder="Photo">
 </div>
 
 <div>
-  <label>company name: </label>
-  <input class="form-control" [(ngModel)]="company" placeholder="company">
+  <label>Category:</label>
+  <select name="select" >
+    <option *ngFor="let category of categories" [value]="category">{{ category.name }}</option>
+  </select>
 </div>
 
-<div>
-  <label>category name: </label>
-  <input class="form-control" [(ngModel)]="category" placeholder="category">
-</div>
 <button (click)="createEvent()">Submit</button>

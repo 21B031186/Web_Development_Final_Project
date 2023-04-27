@@ -47,7 +47,7 @@ export class EventifyService {
               info: string,
               photo: string,
               category: number,
-              company: string): Observable<any> {
+              ): Observable<any> {
     return this.client.post<any>(
       `${this.BASE_URL}/home/`, JSON.stringify({
         "title":title,
@@ -55,8 +55,13 @@ export class EventifyService {
         "info": info,
         "photo": photo,
         "category": category,
-        "company": company
       }), this.httpOptions
     );
+  }
+  register(username: string, password: string) {
+    return this.client.post(`${this.BASE_URL}/api/register`, {
+      username,
+      password
+    });
   }
 }

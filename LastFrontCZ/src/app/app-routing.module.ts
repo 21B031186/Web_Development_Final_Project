@@ -7,6 +7,7 @@ import {EventDetailComponent} from "./event-detail/event-detail.component";
 import {CategoryPageComponent} from "./category-page/category-page.component";
 import {CategoryListComponent} from "./category-list/category-list.component";
 import {CreateEventComponent} from "./create-event/create-event.component";
+import {RegisterPageComponent} from "./register-page/register-page.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'favorites', component: FavoritesPageComponent},
   {path: 'category', component: CategoryPageComponent},
   {path: 'category/:id', component: CategoryListComponent},
-  {path:'create', component: CreateEventComponent}
+  {path:'create', component: CreateEventComponent},
+  {path: 'signup', component: RegisterPageComponent}
 ];
 
 @NgModule({

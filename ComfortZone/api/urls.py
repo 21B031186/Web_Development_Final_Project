@@ -3,6 +3,7 @@ from api.views import *
 
 urlpatterns = [
     path('login/', LoginAPIView.as_view()),
+    path('register/', UserViewSet.as_view({'post': 'create_user'})),
     path('category/', CategoryAPIListView.as_view()),
     path('home/', EventAPIListView.as_view()),
     path('home/<int:pk>/', EventRetrieveUpdateDestroyAPIView.as_view()),

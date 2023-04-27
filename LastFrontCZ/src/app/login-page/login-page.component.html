@@ -1,13 +1,20 @@
-<p>login-page works!</p>
-
+<form>
+  <img class="sidebar__logo" src="assets/login.webp">
 <div>
   <label for="login">Login: </label>
-  <input class="form-control"  id="login" [(ngModel)]="login" placeholder="name">
-
+  <input class="form-control"  id="login" [(ngModel)]="login" placeholder="username">
 </div>
 <div>
   <label for="password">Password: </label>
-  <input class="form-control"  id="password" type="password" [(ngModel)]="password" placeholder="name">
+  <input class="form-control"  id="password" type="password" [(ngModel)]="password" placeholder="password">
   <!--    {{password}}-->
 </div>
-<button (click)="getToken()" class="btn btn-primary">submit</button>
+<button (click)="getToken()" class="btn btn-primary">Sign In</button>
+</form>
+
+<div class="signup">
+  <h4 id="question">Don't have an account? </h4>
+  <div id="signupButton">
+    <button routerLink="../signup" class="btn btn-primary">Sign Up</button>
+  </div>
+</div>

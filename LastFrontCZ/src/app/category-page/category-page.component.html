@@ -1,9 +1,12 @@
-<p>category-page works!</p>
-<ul class="category-list">
-  <li *ngFor="let category of categories" class="category">
+category page html
+<p class="page-title">Categories</p>
+<div *ngFor="let category of categories" class = "category">
+  <div class="category__img-container">
     <img src="{{category.photo}}" alt="">
+  </div>
+  <div class="category__details">
     <a [routerLink]="['/category/', category.id]" class="category__title">
       {{category.name}}
     </a>
-  </li>
-</ul>
+  </div>
+</div>

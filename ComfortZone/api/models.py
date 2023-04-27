@@ -44,6 +44,10 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):
 
     username = models.CharField(db_index=True, max_length=255, unique=True)
+    # first_name = models.CharField(max_length=30, default="")
+    # last_name = models.CharField(max_length=30, default="")
+    # email = models.EmailField(unique=True)
+
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     # Свойство `USERNAME_FIELD` сообщает нам, какое поле мы будем использовать для входа.
@@ -85,12 +89,6 @@ class Category(models.Model):
         return self.name
 
 
-class Company(models.Model):
-    name = CharField(max_length=255)
-
-    def __str__(self):
-        return self.name
-
 
 class Events(models.Model):
     title = CharField(max_length=255)
@@ -100,7 +98,6 @@ class Events(models.Model):
     like = IntegerField(default=0)
     date = DateField(auto_now=True)
     category = ForeignKey(Category, on_delete=models.CASCADE)
-    company = ForeignKey(Company, on_delete=models.CASCADE)
     user = ForeignKey(User, on_delete=models.CASCADE, related_name='events', default=1)
 
     def __str__(self):

@@ -11,15 +11,23 @@ import {EventifyService} from "../eventify.service";
 })
 export class EventDetailComponent implements OnInit {
   event!: Events;
-  constructor(private route: ActivatedRoute, private location: Location, private eventifyService: EventifyService) { }
+  favorites!: Events[];
+  constructor(private route: ActivatedRoute, private location: Location, private service: EventifyService) { }
 
   ngOnInit(): void {
     this.getEvent();
+    this.getFavorites();
+  }
+  getFavorites(){
+    this.service.getFavorites().subscribe(favorites =>{
+      this.favorites = favorites;
+      // console.log(favorites);
+    })
   }
   getEvent() {
     this.route.paramMap.subscribe((params) => {
-      const id =Number(params.get('id'));
-      this.eventifyService.getEvent(id).subscribe((event) => {
+      const id = Number(params.get('id'));
+      this.service.getEvent(id).subscribe((event) => {
         this.event = event;
       });
     });
@@ -30,6 +38,7 @@ export class EventDetailComponent implements OnInit {
   }
 
   liked(event: Events) {
+
     if(!event.liked) {
       event.like += 1
     }
