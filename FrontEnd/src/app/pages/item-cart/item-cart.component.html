@@ -1,0 +1,85 @@
+<app-categories-nav></app-categories-nav>
+<div class="item-cart">
+  <span class="category-of-item">
+    <div>1Market Магазин <img src="../../../assets/media/icons/right-arrow2.svg" alt=""> </div>
+    <div>Телефоны и гаджеты <img src="../../../assets/media/icons/right-arrow2.svg" alt=""> </div>
+    <div>Iphone  </div>
+  </span>
+
+  <div class="item-info">
+    <div class="item-image">
+      <div class="item-main-image">
+        <img [(ngModel)]="mainImage" [src]="mainImage" alt="">
+      </div>
+      <div class="item-other-images">
+        <div>
+          <img (click)="changeMainImage($event)" src="../../../assets/media/images/Products/Iphone14ProMax256GbPink.jpg" alt="">
+        </div>
+        <div>
+          <img (click)="changeMainImage($event)" src="../../../assets/media/images/Products/Iphone14ProMax256GbPink1.jpg" alt="">
+        </div>
+        <div>
+          <img (click)="changeMainImage($event)" src="../../../assets/media/images/Products/Iphone14ProMax256GbPink2.jpg" alt="">
+        </div>
+        <div>
+          <img (click)="changeMainImage($event)" src="../../../assets/media/images/Products/Iphone14ProMax256GbPink3.jpg" alt="">
+        </div>
+        <div>
+          <img (click)="changeMainImage($event)" src="../../../assets/media/images/Products/Iphone14ProMax256GbPink4.jpg" alt="">
+        </div>
+        </div>
+    </div>
+    <div class="item-cart-info">
+      <h2>{{item.name}}</h2>
+      <ngb-rating [max]="5" [(rate)]="item.rating" [readonly]="false"></ngb-rating>
+      <div class="price">
+        <p>Цена</p>
+        <span>{{item.price}} т</span>
+      </div>
+      <div class="item-description">
+        <p [innerHTML]="item.description"></p>
+      </div>
+    </div>
+  </div>
+  <div class="sellers-in-item-cart">
+    <span>Продавцы</span>
+    <div>
+      <div class="seller">
+        <h2>Продавец 1</h2>
+        <div>
+          Доставка сегодня, бесплатно <br>
+          Самовывоз: сегодня
+        </div>
+        <span>129 000т</span>
+        <button class="btn btn-primary">Добавить в корзину</button>
+      </div>
+      <div class="seller">
+        <h2>Продавец 1</h2>
+        <div>
+          Доставка сегодня, бесплатно <br>
+          Самовывоз: сегодня
+        </div>
+        <span>129 000т</span>
+        <button class="btn btn-primary">Добавить в корзину</button>
+      </div>
+      <div class="seller">
+        <h2>Продавец 1</h2>
+        <div>
+          Доставка сегодня, бесплатно <br>
+          Самовывоз: сегодня
+        </div>
+        <span>129 000т</span>
+        <button class="btn btn-primary">Добавить в корзину</button>
+      </div>
+      <div class="seller">
+        <h2>Продавец 1</h2>
+        <div>
+          Доставка сегодня, бесплатно <br>
+          Самовывоз: сегодня
+        </div>
+        <span>129 000т</span>
+        <button class="btn btn-primary">Добавить в корзину</button>
+      </div>
+    </div>
+  </div>
+</div>

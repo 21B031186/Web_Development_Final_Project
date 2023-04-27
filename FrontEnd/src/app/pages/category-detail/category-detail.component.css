@@ -1,0 +1,87 @@
+ngb-rating {
+  color: #FFC107;
+  font-size: 16px;
+}
+
+.category-detail{
+  display: flex;
+  padding: 30px 15%;
+  gap: 30px;
+  box-sizing: border-box;
+}
+.category-detail-left{
+  width: 20%;
+  box-sizing: border-box;
+}
+.all-category-in-category-detail{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+
+.all-category-in-category-detail div{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.all-category-in-category-detail h2{
+  color: #00A2DC;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.all-category-in-category-detail div a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  text-transform: initial;
+  color: #00A2DC;
+  font-size: 14px;
+  font-weight: 500;
+}
+.all-category-in-category-detail div img{
+  width: 18px;
+  margin-right: 10px;
+}
+
+.filter-by-price-in-category-detail, .filter-by-sellers-in-category-detail, .filter-by-rating-in-category-detail{
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 15px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+.filter-by-price-in-category-detail h2, .filter-by-sellers-in-category-detail h2, .filter-by-rating-in-category-detail h2{
+  font-weight: 500;
+  font-size: 15px;
+}
+.filter-by-price-in-category-detail div, .filter-by-sellers-in-category-detail div, .filter-by-rating-in-category-detail div{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.category-detail-right{
+  width: 80%;
+}
+
+.category-detail-right h2{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  color: #00A2DC;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.category-detail-right h2 img{
+  width: 20px;
+  margin: 0 10px;
+
+}
+.category-detail-right h2 span{
+  color: #999999;
+}

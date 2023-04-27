@@ -1,0 +1,11 @@
+<p>category-list works!</p>
+<ul class="event-list">
+  <li *ngFor="let event of events" class="event">
+    <!--    <div *ngIf="!event.removed && event.category_id == 1">-->
+    <img src="{{event.photo}}" alt="">
+    <a [routerLink]="['/home', event.id]" class="event__title">
+      {{event.title}}
+    </a>
+    <p class="event__desc">{{event.info}}</p>
+  </li>
+</ul>

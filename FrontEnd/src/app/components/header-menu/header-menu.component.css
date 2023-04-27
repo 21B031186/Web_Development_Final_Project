@@ -1,0 +1,85 @@
+.header-menu{
+  width: 150px;
+  display: flex;
+  /*justify-content: space-between;*/
+  gap: 10px;
+  align-items: center;
+  box-sizing: border-box;
+}
+.header-menu a{
+  width: fit-content;
+  color: black;
+  text-decoration: none;
+}
+.basket{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.basket1{
+  width: 70%;
+  box-sizing: border-box;
+}
+.basket,.user-menu-user p{
+  font-size: 14px;
+}
+.basket img{
+  width: 100%;
+}
+
+.basket:hover, .user-menu-user:hover p{
+  color: orangered;
+}
+
+.basket:hover,.user-menu-user:hover  img{
+  filter: invert(31%) sepia(38%) saturate(4529%) hue-rotate(2deg) brightness(103%) contrast(106%);
+}
+.uss{
+  position: relative;
+  box-sizing: border-box;
+  width: 20%;
+}
+.uss > a{
+  width: 70%;
+}
+.uss > a > img{
+  width: 100%;
+}
+.user-menu{
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e1e1e1;
+  width: 100px;
+  display: none;
+}
+.uss:hover > .user-menu{
+  display: flex;
+}
+.user-menu > a{
+  width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: white;
+  display: flex;
+  color: black;
+  align-items: center;
+  padding: 10px 10px 10px  15px;
+  border-bottom: 1px solid #e1e1e1;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.user-menu a:hover{
+  color: orangered;
+  background-color: #e1e1e1;
+}

@@ -1,0 +1,92 @@
+<app-categories-nav></app-categories-nav>
+<div class="category-detail">
+
+  <div class="category-detail-left">
+    <div class="all-category-in-category-detail" >
+      <h2>Все категории</h2>
+      <div >
+        <a class="currentCategory" href="" [(ngModel)]="currentCategory"><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Молочные продукты </a>
+        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Сладости и выпечка </a>
+        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Овощи и фрукты</a>
+        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Крупы, хлопья</a>
+        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Масла, соусы</a>
+        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Консервация</a>
+        <a class="currentCategory" href=""><img src="../../../assets/media/icons/rounded-arrow.png" alt=""> Колбасы, сосиски</a>
+      </div>
+    </div>
+    <div class="filter-by-price-in-category-detail">
+      <h2>Цена</h2>
+      <div>
+        <input type="checkbox" name="" id="price100000">
+        <span>до 10 000т</span>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="price100000-49999">
+        <span>10 000 - 49 999т</span>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="price50000-99999">
+        <span>50 000 - 99 999т</span>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="price1000000-199999">
+        <span>100 000 - 199 999т</span>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="price200000">
+        <span>более 200 000т</span>
+      </div>
+    </div>
+    <div class="filter-by-sellers-in-category-detail">
+      <h2>Продавцы</h2>
+      <div>
+        <input type="checkbox" name="" id="seller1">
+        <span>Продавец1</span>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="seller2">
+        <span>Продавец2</span>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="seller3">
+        <span>Продавец3</span>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="seller4">
+        <span>Продавец4</span>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="seller5">
+        <span>Продавец5</span>
+      </div>
+    </div>
+    <div class="filter-by-rating-in-category-detail">
+      <h2>Рейтинг</h2>
+      <div>
+        <input type="checkbox" name="" id="rate2">
+        <span><ngb-rating [max]="5" [(rate)]="r4" [readonly]="true"></ngb-rating> и выше</span>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="rate3">
+        <span><ngb-rating [max]="5" [(rate)]="r3" [readonly]="true"></ngb-rating> и выше</span>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="rate4">
+        <span><ngb-rating [max]="5" [(rate)]="r2" [readonly]="true"></ngb-rating> и выше</span>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="rate5">
+        <span><ngb-rating [max]="5" [(rate)]="r1" [readonly]="true"></ngb-rating> и выше</span>
+      </div>
+    </div>
+  </div>
+  <div class="category-detail-right">
+    <h2>1Market Магазин <img src="../../../assets/media/icons/right-arrow2.svg" alt=""> <span>{{category.name}}</span></h2>
+    <div>
+      <app-product-list-in-category-detail>
+
+      </app-product-list-in-category-detail>
+    </div>
+  </div>
+
+</div>

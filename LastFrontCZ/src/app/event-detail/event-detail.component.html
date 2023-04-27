@@ -1,0 +1,20 @@
+<div class="event__detail">
+  <img src="{{event.photo}}" width="200" alt="">
+  <p class="event__title">{{event.title}}</p>
+  <p class="event__title">{{event.date}}</p>
+
+  <div class="event__detail__buttons">
+    <div class="event__detail__like__share">
+      <button (click)="liked(event)" class="event__detail__button">Like {{event.like}}</button>
+      <a href="https://telegram.me/share/url?url={{event.title}}">
+        <button type="button" (click)="share()" class="event__detail__button">
+          Share
+        </button>
+      </a>
+    </div>
+    <button (click)="remove(event)" class="event__detail__button">Remove</button>
+  </div>
+
+  <h2>ОБЩАЯ ИНФОРМАЦИЯ</h2>
+  <p class="event__info">{{event.info}}</p>
+</div>

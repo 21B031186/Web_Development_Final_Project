@@ -1,0 +1,16 @@
+<header>
+  <a href="" class="header-logo" >
+    <img src="../../../assets/media/images/logo.jpg" alt="">
+  </a>
+
+  <form class="header-search-items">
+    <input type="text" placeholder="Введите название товара">
+    <button type="submit">
+      <img src="../../../assets/media/icons/find.png" alt="">
+      Найти
+    </button>
+  </form>
+
+  <app-header-buttons *ngIf="isUser"></app-header-buttons>
+  <app-header-menu *ngIf="!isUser"></app-header-menu>
+</header>

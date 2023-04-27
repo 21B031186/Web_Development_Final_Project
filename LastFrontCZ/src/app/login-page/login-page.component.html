@@ -1,0 +1,13 @@
+<p>login-page works!</p>
+
+<div>
+  <label for="login">Login: </label>
+  <input class="form-control"  id="login" [(ngModel)]="login" placeholder="name">
+
+</div>
+<div>
+  <label for="password">Password: </label>
+  <input class="form-control"  id="password" type="password" [(ngModel)]="password" placeholder="name">
+  <!--    {{password}}-->
+</div>
+<button (click)="getToken()" class="btn btn-primary">submit</button>

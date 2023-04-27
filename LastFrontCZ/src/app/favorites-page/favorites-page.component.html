@@ -1,0 +1,13 @@
+<p>favorites-page works!</p>
+<ul class="event-list">
+  <li *ngFor="let event of events" class="event">
+    <!--      <div *ngIf="event.liked">-->
+    <img src="{{event.photo}}" alt="">
+    <a [routerLink]="['/home', event.id]" class="event__title">
+      {{event.title}}
+      <!--            Peace-->
+    </a>
+    <p class="event__desc">{{event.info}}</p>
+    <!--      </div>-->
+  </li>
+</ul>

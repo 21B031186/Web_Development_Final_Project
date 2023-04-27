@@ -1,0 +1,49 @@
+.item-in-basket{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #e1e1e1;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  transition: .4s;
+}
+.item-in-basket > div{
+  width: 10%;
+}
+.item-in-basket > div > img{
+  width: 100%;
+}
+.item-in-basket > button{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: gray;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+
+.item-in-basket > button:hover{
+  background-color: black;
+  cursor: pointer;
+}
+.item-in-basket:hover{
+  border: 2px solid black;
+}
+.item-in-basket > span{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.item-in-basket > span > h2{
+  font-size: 16px;
+  font-weight: bold;
+}
+

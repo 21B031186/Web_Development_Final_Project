@@ -1,0 +1,54 @@
+<div class="card w-50 container mt-5">
+  <h4 class="card-header">Registration</h4>
+  <div class="card-body">
+    <form >
+      <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input type="text" [(ngModel)]="firstName" class="form-control" />
+<!--        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">-->
+<!--          <div *ngIf="f.firstName.errors.required">First Name is required</div>-->
+<!--        </div>-->
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Last Name</label>
+        <input type="text" [(ngModel)]="lastName" class="form-control"  />
+<!--        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">-->
+<!--          <div *ngIf="f.lastName.errors.required">Last Name is required</div>-->
+<!--        </div>-->
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" [(ngModel)]="username" class="form-control"/>
+<!--        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">-->
+<!--          <div *ngIf="f.username.errors.required">Username is required</div>-->
+<!--        </div>-->
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" [(ngModel)]="password" class="form-control" />
+<!--        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">-->
+<!--          <div *ngIf="f.password.errors.required">Password is required</div>-->
+<!--          <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>-->
+<!--        </div>-->
+      </div>
+
+      <div class="form-check form-switch mb-3">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (change)="isItCompany()">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Я являюсь продавцом</label>
+      </div>
+
+      <div class="mb-3" *ngIf="isCompany">
+        <label class="form-label">Название Магазина</label>
+        <input type="text" [(ngModel)]="companyName" class="form-control" />
+      </div>
+
+      <div>
+        <button [disabled]="loading" class="btn btn-primary">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+          Register
+        </button>
+        <a routerLink="../login" class="btn btn-link">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>

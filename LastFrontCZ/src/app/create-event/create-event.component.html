@@ -1,0 +1,29 @@
+<p>create-event works!</p>
+<div>
+  <label>title: </label>
+  <input class="form-control" [(ngModel)]="title" placeholder="name">
+</div>
+<div>
+  <label>desc: </label>
+  <input class="form-control" [(ngModel)]="desc" placeholder="desc">
+</div>
+
+<div>
+  <label>info: </label>
+  <input class="form-control" [(ngModel)]="info" placeholder="info">
+</div>
+<div>
+  <label>photo url: </label>
+  <input class="form-control" [(ngModel)]="photo" placeholder="photo">
+</div>
+
+<div>
+  <label>company name: </label>
+  <input class="form-control" [(ngModel)]="company" placeholder="company">
+</div>
+
+<div>
+  <label>category name: </label>
+  <input class="form-control" [(ngModel)]="category" placeholder="category">
+</div>
+<button (click)="createEvent()">Submit</button>

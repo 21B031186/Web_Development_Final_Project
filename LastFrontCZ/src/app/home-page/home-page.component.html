@@ -1,0 +1,11 @@
+<p>home-page works!</p>
+<ul class="event-list">
+  <li *ngFor="let event of events" class="event">
+    <img src="{{event.photo}}" alt="">
+    <a [routerLink]="['/home', event.id]" class="event__title">
+      <!-- {{event.title}} -->
+      {{event.title}}
+    </a>
+    <p class="event__desc">{{event.info}}</p>
+  </li>
+</ul>

@@ -1,0 +1,128 @@
+.item-cart{
+  padding: 10px 15% 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-of-item, .category-of-item div{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 5px 0;
+  color: #00A2DC;
+  font-size: 15px;
+}
+
+.item-info{
+  margin-top: 10px;
+  background-color: white;
+  border: 1px solid #e1e1e1;
+  display: flex;
+  gap: 2%;
+
+}
+.item-image{
+  padding: 30px ;
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  box-sizing: border-box;
+  gap: 100px;
+}
+.item-main-image{
+  margin: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 450px;
+}
+.item-main-image img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.item-other-images{
+  padding: 30px 30px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  /*box-sizing: border-box;*/
+}
+.item-other-images div{
+  width: calc(20% - 15px);
+  height: 100px;
+}
+.item-other-images div img{
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  object-fit: cover;
+}
+.item-cart-info{
+  width: 35%;
+  border-left: 1px solid #e1e1e1;
+  padding: 20px;
+}
+
+.item-cart-info h2{
+  font-size: 24px;
+}
+
+.item-cart-info ngb-rating{
+  color: orangered;
+  font-size: 19px;
+  margin: 12px 0;
+}
+.item-cart-info > .price{
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.item-cart-info > .price > p{
+  color: #999999;
+  font-size: 18px;
+}
+.item-cart-info > .price > span{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.item-description p {
+  word-wrap: inherit;
+  margin-top: 20px;
+}
+
+.sellers-in-item-cart{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.sellers-in-item-cart > div{
+  background-color: white;
+  border: 1px solid #e1e1e1;
+  padding: 0 30px ;
+  display: flex;
+  flex-direction: column;
+  /*gap: 15px;*/
+}
+.sellers-in-item-cart > span{
+  width: fit-content;
+  padding: 10px 25px;
+  background-color: #e6e6e6;
+}
+.seller{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  margin-top: 18px;
+  border-bottom: 1px solid #e1e1e1;
+}
