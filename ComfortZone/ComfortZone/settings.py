@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     # internal applications
-    'api',
+    'event',
     'accounts',
 ]
 

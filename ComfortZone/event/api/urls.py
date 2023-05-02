@@ -1,7 +1,6 @@
 from django.urls import path
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from api.views import *
+from event.api.views import *
 
 urlpatterns = [
     path('category/', CategoryAPIListView.as_view()),
@@ -10,6 +9,4 @@ urlpatterns = [
     path('category/<int:pk>/', CategoryItemsAPIView.as_view()),
     path('favorites/', FavoritesAPIView.as_view()),
     path('like/<int:pk>/', like),
-    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

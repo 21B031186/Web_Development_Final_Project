@@ -22,6 +22,7 @@ class Events(models.Model):
     title = CharField(max_length=255)
     desc = TextField()
     info = TextField()
+    pub_date = models.DateTimeField("Date publishing", auto_now_add=True)
     photo = CharField(max_length=800)
     like = IntegerField(default=0)
     date = DateField(auto_now=True)
@@ -29,11 +30,40 @@ class Events(models.Model):
     user = ForeignKey(User, on_delete=models.CASCADE, related_name='events', default=1)
 
     class Meta:
+        ordering = '-pub_date',
         verbose_name = 'Event'
         verbose_name_plural = 'Events'
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Events,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        related_name='comments',
+        verbose_name='Comments'
+    )
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name='Author publishing'
+    )
+    text = models.TextField(
+        'text comments',
+        help_text='Write comments',
+    )
+    created = models.DateTimeField(
+        'Date of commentary',
+        auto_now_add=True,
+    )
+
+    def __str__(self):
+        return self.text[:30]
 
 
 class LikeUser(models.Model):

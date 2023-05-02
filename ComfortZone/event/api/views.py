@@ -3,8 +3,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import generics
-from api.serializers import *
-from api.models import *
+from event.api.serializers import *
+from event.models import *
 
 
 class EventAPIListView(generics.ListCreateAPIView):

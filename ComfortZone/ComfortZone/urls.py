@@ -3,8 +3,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),
+    path('event/', include('event.api.urls')),
 
     # Rest Framework Urls
-    path('api/account/', include('accounts.api.urls', 'accounts_api')),
+    path('event/account/', include('accounts.api.urls', 'accounts_api')),
 ]
