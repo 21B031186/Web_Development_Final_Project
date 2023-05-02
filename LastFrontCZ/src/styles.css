@@ -166,6 +166,7 @@ button {
   height: 255px;
   width: 195px;
   margin: 0px 0px -34px 25px;
+  overflow: hidden;
 }
 
 .category img {

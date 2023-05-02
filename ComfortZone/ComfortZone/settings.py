@@ -49,20 +49,18 @@ INSTALLED_APPS = [
 
     # third applications
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
 
     # internal applications
     'api',
+    'accounts',
 ]
-AUTH_USER_MODEL = 'api.User'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-        ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'api.backends.JWTAuthentication',
-        )
+        'rest_framework.authentication.TokenAuthentication',
+    )
 }
 
 MIDDLEWARE = [
@@ -97,6 +95,8 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTH_USER_MODEL = 'accounts.User'
 
 WSGI_APPLICATION = 'ComfortZone.wsgi.application'
 
@@ -152,10 +152,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-REST_FRAMEWORK = {
-   'DEFAULT_AUTHENTICATION_CLASSES': (
-       'rest_framework.authentication.TokenAuthentication',
-   ),
-   # 'DEFAULT_PERMISSION_CLASSES': ( 'rest_framework.permissions.IsAdminUser', ),
-}
