@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Category, Events, Token, LoginData} from "./models";
+import {Category, Events, LoginData} from "../models";
 import {Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
 export class EventifyService {
   httpOptions = {};
-  BASE_URL="http://127.0.0.1:8000/api";
+  BASE_URL="http://127.0.0.1:8000/event";
   constructor(private client: HttpClient) {
     this.httpOptions = {
       headers: new HttpHeaders({
@@ -37,11 +37,6 @@ export class EventifyService {
   getFavorites():Observable<Events[]>{
     return this.client.get<Events[]>(`${this.BASE_URL}/favorites`);
   }
-  getToken(login: LoginData): Observable<Token> {
-    return this.client.post<Token>(
-      `${this.BASE_URL}/login/`, login
-    );
-  }
   createEvent(title: string,
               desc: string,
               info: string,
@@ -57,11 +52,5 @@ export class EventifyService {
         "category": category,
       }), this.httpOptions
     );
-  }
-  register(username: string, password: string) {
-    return this.client.post(`${this.BASE_URL}/api/register`, {
-      username,
-      password
-    });
   }
 }

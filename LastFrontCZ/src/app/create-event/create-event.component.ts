@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {EventifyService} from "../eventify.service";
+import {EventifyService} from "../services/eventify.service";
 import {Category} from "../models";
 import {CategoryPageComponent} from "../category-page/category-page.component"
 

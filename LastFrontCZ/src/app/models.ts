@@ -16,15 +16,27 @@ export interface Category{
   name: string;
   photo: string;
 }
-export interface Token {
-  token: string;
-}
 export interface LoginData {
-  username: string,
+  email: string,
   password: string
 }
 export interface LikedData{
   username: string;
   event: string;
   user_liked: boolean;
+}
+
+export interface nonAuthUser{
+  email: string;
+  username: string;
+  password: string;
+  password2: string;
+
+}
+
+export interface BackReturn{
+  response: string;
+  pk: number;
+  email: string;
+  token: string;
 }

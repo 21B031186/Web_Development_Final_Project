@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Category} from "../models";
-import {EventifyService} from "../eventify.service";
+import {EventifyService} from "../services/eventify.service";
 @Component({
   selector: 'app-category-page',
   templateUrl: './category-page.component.html',
