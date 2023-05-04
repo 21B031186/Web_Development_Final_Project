@@ -12,17 +12,19 @@ from event.api.serializers import EventSerializer,CategorySerializer,CommentSeri
 from event.models import Events, LikeUser, Category, Comment
 
 
-class EventAPIListView(APIView):
-    permission_classes = (IsAuthenticated,)
-    def post(self, request, *args, **kwargs):
-        data = request.data.copy()
-        data['user'] = request.user.id
-        serializer = EventSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+class EventAPIListView(generics.ListCreateAPIView):
+    permission_classes = (AllowAny,)
+    queryset = Events.objects.all()
+    serializer_class = EventSerializer
+    # def post(self, request, *args, **kwargs):
+    #     data = request.data.copy()
+    #     data['user'] = request.user.id
+    #     serializer = EventSerializer(data=data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    #
 
 class EventRetrieveUpdateDestroyAPIView(APIView):
     permission_classes = (AllowAny,)

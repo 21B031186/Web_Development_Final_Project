@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {BackReturn, LoginData} from "../models";
+//import {BackReturn, LoginData} from "../models";
 import {LoginService} from "../services/login.service";
 import {Router} from "@angular/router";
-import {Token} from "@angular/compiler";
+import {LoginData, Token} from "../models";
 
 @Component({
   selector: 'app-login-page',
@@ -10,18 +10,22 @@ import {Token} from "@angular/compiler";
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  username: string = ""
+  email: string = ""
   password: string = ""
   constructor(private service: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  loginUser(): void {
-    let tok!: BackReturn
-    console.log(this.username)
+  getToken() {
+    let logData: LoginData = {
+      username: this.email,
+      password: this.password
+  }
+    let tok!: Token
+    console.log(this.email)
     console.log(this.password)
-    this.service.login(this.username, this.password).subscribe(
+    this.service.getToken(logData).subscribe(
       (token) => {
         //const tok = respond['access']
         // console.log(tok)

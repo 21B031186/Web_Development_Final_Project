@@ -2,14 +2,14 @@
   <img class="sidebar__logo" src="assets/login.webp">
 <div>
   <label for="login">Login: </label>
-  <input class="form-control"  id="login" [(ngModel)]="username" placeholder="email" name="df">
+  <input class="form-control"  id="login" [(ngModel)]="email" placeholder="email" name="df">
 </div>
 <div>
   <label for="password">Password: </label>
   <input class="form-control"  id="password" type="password" [(ngModel)]="password" placeholder="password" name="dsf">
   <!--    {{password}}-->
 </div>
-<button type="submit" (click)="loginUser()" class="btn btn-primary">Sign In</button>
+<button type="submit" (click)="getToken()" class="btn btn-primary">Sign In</button>
 </form>
 
 <div class="signup">

@@ -17,8 +17,11 @@ export interface Category{
   photo: string;
 }
 export interface LoginData {
-  email: string,
+  username: string,
   password: string
+}
+export interface Token{
+  token: string
 }
 export interface LikedData{
   username: string;
@@ -34,9 +37,9 @@ export interface nonAuthUser{
 
 }
 
-export interface BackReturn{
-  response: string;
-  pk: number;
-  email: string;
-  token: string;
-}
+// export interface BackReturn{
+//   response: string;
+//   pk: number;
+//   email: string;
+//   token: string;
+// }
