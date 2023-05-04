@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-//import {BackReturn, LoginData} from "../models";
 import {LoginService} from "../services/login.service";
 import {Router} from "@angular/router";
-import {LoginData, Token} from "../models";
+import {LoginData, MyJwtPayload, Token, User} from "../models";
+import jwt_decode, { JwtPayload} from 'jwt-decode'
 
 @Component({
   selector: 'app-login-page',
@@ -10,36 +10,26 @@ import {LoginData, Token} from "../models";
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  undef : boolean | undefined;
-  email: string = ""
-  password: string = ""
+  user: User = {email: '', password: ''};
+  loginError: boolean | undefined;
   constructor(private service: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+    this.loginError = true;
   }
 
   // @ts-ignore
-  getToken() {
-    let logData: LoginData = {
-      username: this.email,
-      password: this.password
-  }
-    let tok!: Token
-    console.log(this.email)
-    console.log(this.password)
-    this.service.getToken(logData).subscribe(
-      (token) => {
+  login() {
+    this.service.logIn(this.user.email, this.user.password).subscribe(
+      (data) => {
         //const tok = respond['access']
           // console.log(tok)
-          tok = token
-          console.log(tok)
-          if( typeof tok.token != "undefined"){
-            localStorage.setItem("token", tok.token);
-            location.href = "../home";
-          }else{
-            // @ts-ignore
-            this.undef = true;
-          }
+          localStorage.setItem('token', data.access)
+          const decoded: MyJwtPayload = jwt_decode(data.access);
+          localStorage.setItem('id', String(decoded.user_id));
+          localStorage.setItem('user_type', decoded.user_type)
+        // this.router.navigate(['../home'])
+          location.href = "../home"
       }
     )
 

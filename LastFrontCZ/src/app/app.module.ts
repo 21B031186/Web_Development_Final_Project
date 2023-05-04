@@ -15,6 +15,8 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { CreateCategoryComponent } from './create-category/create-category.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { RegisterPageComponent } from './register-page/register-page.component';
     CategoryPageComponent,
     CategoryListComponent,
     CreateEventComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    CreateCategoryComponent,
+    DeleteUserComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,6 @@ urlpatterns = [
     path('favorites/', FavoritesAPIView.as_view()),
     #path('like/<int:pk>/', like),
     path('create/', EventAPIListView.as_view()),
-    path('MyEvents/',my_events),
-    path('comments/',comments)
+    path('MyEvents/', my_events),
+    path('comments/', comments)
 ]

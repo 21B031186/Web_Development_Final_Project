@@ -43,6 +43,7 @@ class UserManager(BaseUserManager):
 class User(AbstractUser):
     email = models.EmailField(verbose_name="Email", unique=True)
     username = models.CharField(max_length=30, unique=True)
+    user_type = models.CharField(max_length=50)
     data_joined = models.DateTimeField(verbose_name='date_joined', auto_now_add=True)
     last_login = models.DateTimeField(verbose_name='last_login', auto_now=True)
     is_admin = models.BooleanField(default=False)

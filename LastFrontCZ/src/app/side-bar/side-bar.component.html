@@ -12,4 +12,12 @@
   <li>
     <a routerLink="../create" class="sidebar__button">Create Event</a>
   </li>
+  <div *ngIf="isManager">
+    <li>
+      <a routerLink="../deleteUser" class="sidebar__button">Create Category</a>
+    </li>
+    <li>
+      <a routerLink="../createCategory" class="sidebar__button">Delete User</a>
+    </li>
+  </div>
 </ul>

@@ -36,6 +36,18 @@ export interface nonAuthUser{
   password2: string;
 
 }
+export interface AuthToken {
+  access: string;
+}
+
+export interface MyJwtPayload {
+  user_id: number;
+  user_type: string
+}
+export interface User {
+  email : string;
+  password : string;
+}
 
 // export interface BackReturn{
 //   response: string;

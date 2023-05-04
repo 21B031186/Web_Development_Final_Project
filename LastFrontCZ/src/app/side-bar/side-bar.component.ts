@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBarComponent implements OnInit {
 
+  isManager: boolean | undefined;
   constructor() { }
 
   ngOnInit(): void {
+    const u_type = localStorage.getItem('user_type');
+    if (u_type == "Manager") this.isManager = true;
   }
 
 }
