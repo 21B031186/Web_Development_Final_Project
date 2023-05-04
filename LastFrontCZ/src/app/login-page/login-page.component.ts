@@ -10,6 +10,7 @@ import {LoginData, Token} from "../models";
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  undef : boolean | undefined;
   email: string = ""
   password: string = ""
   constructor(private service: LoginService, private router: Router) { }
@@ -17,6 +18,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // @ts-ignore
   getToken() {
     let logData: LoginData = {
       username: this.email,
@@ -28,11 +30,16 @@ export class LoginPageComponent implements OnInit {
     this.service.getToken(logData).subscribe(
       (token) => {
         //const tok = respond['access']
-        // console.log(tok)
-        tok = token
-        console.log(tok)
-        localStorage.setItem("token", tok.token);
-        location.href = "../home";
+          // console.log(tok)
+          tok = token
+          console.log(tok)
+          if( typeof tok.token != "undefined"){
+            localStorage.setItem("token", tok.token);
+            location.href = "../home";
+          }else{
+            // @ts-ignore
+            this.undef = true;
+          }
       }
     )
 

@@ -10,7 +10,11 @@
   <!--    {{password}}-->
 </div>
 <button type="submit" (click)="getToken()" class="btn btn-primary">Sign In</button>
+  <div class="undefined" *ngIf="undef">
+    <p style="font-size: 14px; color: red">Please rewrite email or password!</p>
+  </div>
 </form>
+
 
 <div class="signup">
   <h4 id="question">Don't have an account? </h4>
