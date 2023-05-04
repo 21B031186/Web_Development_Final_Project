@@ -1,28 +1,28 @@
 <div>
   <a *ngIf="!logged" routerLink="../login" class="login__button">Log in</a>
-  <a *ngIf="logged"  (click)="logOut()" routerLink="../home" class="login__button">Log Out</a>
+  <a *ngIf="logged"  (click)="logOut()" routerLink="../login" class="login__button">Log Out</a>
   <!--    <li *ngIf="logged"><a>Log out</a></li>-->
   <!--    {{logged}}-->
 </div>
 
-<!--
 
 
-<div class="container">
-    <div class="nav">
-        <img class="logo" src="assets/logo-transparent.png" alt="Logo" routerLink="/home">
-        <ul>
-            <li><a routerLink="/home">Home</a></li>
-            <li><a routerLink="/about">About</a></li>
-            <li><a routerLink="/profile">Profile</a></li>
-            <li *ngIf="logged; else notLogged" (click)="logOut()"><a>Log out</a></li>
-            <ng-template #notLogged>
-                <li><a class="in" routerLink="/login">Log in</a></li>
-                <li><a class="up" routerLink="/register">Register</a></li>
-            </ng-template>
-        </ul>
-    </div>
-</div>
+
+<!--<div class="container">-->
+<!--    <div class="nav">-->
+<!--        <img class="logo" src="assets/logo-transparent.png" alt="Logo" routerLink="/home">-->
+<!--        <ul>-->
+<!--            <li><a routerLink="/home">Home</a></li>-->
+<!--            <li><a routerLink="/about">About</a></li>-->
+<!--            <li><a routerLink="/profile">Profile</a></li>-->
+<!--            <li *ngIf="logged; else notLogged" (click)="logOut()"><a>Log out</a></li>-->
+<!--            <ng-template #notLogged>-->
+<!--                <li><a class="in" routerLink="/login">Log in</a></li>-->
+<!--                <li><a class="up" routerLink="/register">Register</a></li>-->
+<!--            </ng-template>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
 
 
--->
+
